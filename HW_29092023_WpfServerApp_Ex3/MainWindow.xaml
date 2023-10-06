@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HW_29092023_WpfServerApp_Ex3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+            Title="MainWindow" Height="450" Width="800" Background="LightGray">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0"  Content="Client: "  VerticalContentAlignment="Center" FontSize="18"  Margin="10" ></Label>
+            <Label Grid.Column="1" x:Name="lb_client"  VerticalContentAlignment="Center" FontSize="18"  Margin="10" ></Label>
+            <Label Grid.Column="2" x:Name="lb_connect"   Content="Connected " VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Background="IndianRed" Margin="10" ></Label>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="tb_Message"  Grid.Row="0" Margin="15"></TextBox>
+            <Button Grid.Row="0" Grid.Column="1" x:Name="btn_Send" Content="Send" FontSize="18"  Margin="15" Click ="btn_Send_Click"></Button>
+            <TextBlock x:Name="tb_Answer" Grid.Row="1" Grid.ColumnSpan="2" FontSize="20" Margin="15" VerticalAlignment="Center" ></TextBlock>
+        </Grid>
     </Grid>
 </Window>
